@@ -1,7 +1,6 @@
 package com.techreturners.exercise003;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -24,7 +23,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkGetIceCreamCodeForMangoSorbet() {
         String iceCreamFlavour = "Mango Sorbet";
@@ -33,7 +31,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkGetIceCreamCodeForRaspberryRipple() {
         String iceCreamFlavour = "Raspberry Ripple";
@@ -42,7 +39,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkPickMultipleIceCreamFlavours() {
 
@@ -51,5 +47,43 @@ public class Exercise003Test {
         assertArrayEquals(expected, ex003.iceCreamFlavours());
     }
 
+    @Test
+    public void checkGetIceCreamCodeForVanilla() {
+        String iceCreamFlavour = "Vanilla";
+        int expected = 2;
 
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+
+    @Test
+    public void checkGetIceCreamCodeForChocolate() {
+        String iceCreamFlavour = "Chocolate";
+        int expected = 4;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+
+    @Test
+    public void checkGetIceCreamCodeForWrongFlavour() {
+        String iceCreamFlavour = "Strawberry";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+
+    @Test
+    public void checkGetIceCreamCodeForEmptyFlavour() {
+        String iceCreamFlavour = "";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+
+    @Test
+    public void checkGetIceCreamCodeForBlankFlavour() {
+        String iceCreamFlavour = "   ";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
 }

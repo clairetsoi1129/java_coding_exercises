@@ -4,16 +4,19 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Exercise004 {
+    @SuppressWarnings("FieldMayBeFinal")
+    private LocalDateTime dateTime;
 
     public Exercise004(LocalDate date) {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+        this.dateTime =  date.atStartOfDay();
     }
 
     public Exercise004(LocalDateTime dateTime) {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+        this.dateTime = dateTime;
     }
 
     public LocalDateTime getDateTime() {
-        throw new UnsupportedOperationException("You can delete this statement and add your code here.");
+        final long GIGA_SEC = 1000000000;
+        return this.dateTime.plusSeconds(GIGA_SEC);
     }
 }
