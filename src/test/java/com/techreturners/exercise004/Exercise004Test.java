@@ -39,6 +39,24 @@ public class Exercise004Test {
     }
 
     @Test
+    public void checkGetDateTimeWhenDateIsSpecifiedWithLeapYear() {
+
+        Exercise004 ex004 = new Exercise004(LocalDate.of(2024, Month.FEBRUARY, 29));
+        LocalDateTime expected = LocalDateTime.of(2055, Month.NOVEMBER, 7, 1, 46, 40);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
+
+    @Test
+    public void checkGetDateTimeWhenBothDateAndTimeIsSpecifiedWithLeapYear() {
+
+        Exercise004 ex004 = new Exercise004(LocalDateTime.of(2024, Month.FEBRUARY, 29, 23, 59, 59));
+        LocalDateTime expected = LocalDateTime.of(2055, Month.NOVEMBER, 8, 1, 46, 39);
+
+        assertEquals(expected, ex004.getDateTime());
+    }
+
+    @Test
     public void checkGetDateTimeWhenDateIsSpecifiedWithVeryBigDate() {
 
         Exercise004 ex004 = new Exercise004(LocalDate.of(999999968, Month.APRIL, 23));
